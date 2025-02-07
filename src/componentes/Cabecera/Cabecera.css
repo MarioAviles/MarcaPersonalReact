@@ -1,7 +1,29 @@
 /* Color titulos: #f59432 */
 /* Color texto: #fff */
 /* Color footer: #364f59 */
+/* Color fondo: #b8d3df */
+
+html {
+    background-color: #b8d3df;
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
-    text-align: center;;
+    text-align: center;
+}
+
+.titulos {
+    color: #f59432
+}
+
+.bandera {
+    max-height: 30px;
+    float: right;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
 }
