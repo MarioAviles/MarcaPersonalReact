@@ -1,0 +1,79 @@
+footer {
+    background-color: #364F59; /* Color oscuro de fondo */
+    text-align: center;
+    color: white;
+}
+
+/* Contenedor de los contadores */
+.contadores{
+    display: flex;
+    justify-content: center;
+    background-color: #f7931e; /* Naranja */
+    padding: 30px 0;
+    margin: 0 10%;
+    text-align: center;
+}
+
+.contador {
+    display: flex;
+    flex-direction: column; /* Apila el título y el número */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0 40px; /* Más espacio entre columnas */
+}
+
+/* Estilos para los textos */
+.contador h2 {
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para cada bloque */
+.contadores h2 {
+    margin: 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Ajuste para números */
+
+.informacion{
+    padding: 10px;
+    border: 1px solid #284753;
+}
+.imagenes{
+    display: flex;
+    justify-content: center;
+    margin: 0 10% 15px;
+}
+
+.imagenes img{
+    width: 30px;
+    height: 50px;
+    margin: 0 5px 0 0;
+}
+
+.marcapersonal {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px; 
+    padding: 20px;
+}
+
+.marcapersonal img {
+    width: 80px;
+    height: auto;
+    vertical-align: bottom; /* para que la imagen se alinee con el texto */
+}
+
+.marcapersonal h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.marcapersonal p {
+    font-size: 14px;
+    margin: 0;
+}
