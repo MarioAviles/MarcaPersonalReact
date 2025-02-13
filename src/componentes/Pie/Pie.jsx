@@ -29,17 +29,18 @@ const Pie = () => {
                 </div>
             </div>
             <div className="informacion">
-                <h4>CIFP Carlos III</h4>
+                <a href="https://cifpcarlos3.es/es"><h4>CIFP Carlos III</h4></a>
                 <p>C/Carlos III, 30201 - Cartagena | 30019702@murciaeduca.es | 968321301</p>
                 <div className="imagenes">
-                    <img src={facebook} alt="" />
-                    <img src={twitter} alt="" />
-                    <img src={instagram} alt="" />
-                    <img src={tiktok} alt="" />
-                    <img src={youtube} alt="" />
+                    
+                    <a href="https://www.facebook.com/cifpcarlos3"><img src={facebook} alt="" /></a>
+                    <a href="https://twitter.com/cifpcarlos3"><img src={twitter} alt="" /></a>
+                    <a href="https://www.instagram.com/cifpcarlos3/"><img src={instagram} alt="" /></a>
+                    <a href="https://www.tiktok.com/@cifpcarlos3"><img src={tiktok} alt="" /></a>
+                    <a href="https://www.youtube.com/c/cifpcarlosiiicartagena"><img src={youtube} alt="" /></a>
                 </div>
             </div>
-            <div className="marcapersonal">
+            <div className="copyright">
                 <img src={logo} alt="" />
                 <h6>Marca Personal FP </h6>
                 <p>| Diseño Web CFGS Desarrollo de Aplicaciones Web &copy; 2023</p>

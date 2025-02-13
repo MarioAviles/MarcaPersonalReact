@@ -18,7 +18,7 @@ footer {
     display: flex;
     flex-direction: column; /* Apila el título y el número */
     align-items: center; /* Centra horizontalmente */
-    margin: 0 40px; /* Más espacio entre columnas */
+    margin: 0 30px; /* Más espacio entre columnas */
 }
 
 /* Estilos para los textos */
@@ -41,6 +41,12 @@ footer {
     padding: 10px;
     border: 1px solid #284753;
 }
+
+.informacion a{
+    text-decoration: none;
+    color: white;
+}
+
 .imagenes{
     display: flex;
     justify-content: center;
@@ -53,7 +59,7 @@ footer {
     margin: 0 5px 0 0;
 }
 
-.marcapersonal {
+.copyright {
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -61,19 +67,19 @@ footer {
     padding: 20px;
 }
 
-.marcapersonal img {
+.copyright img {
     width: 80px;
     height: auto;
     vertical-align: bottom; /* para que la imagen se alinee con el texto */
 }
 
-.marcapersonal h6 {
+.copyright h6 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
 }
 
-.marcapersonal p {
+.copyright p {
     font-size: 14px;
     margin: 0;
 }

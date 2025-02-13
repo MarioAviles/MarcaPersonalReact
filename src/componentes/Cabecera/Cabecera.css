@@ -15,7 +15,7 @@ html, body {
 }
 
 .logo {
-    height: 50px; /* Ajustar el tamaño del logo */
+    width: 70px; /* Ajustar el tamaño del logo */
 }
 
 .titulo {

@@ -6,7 +6,7 @@ import school from '../../assets/school.jpg';
 const Home = () => { 
 
     return (
-        <div>
+        <div className=''>
             <img src={empresa} alt="" />
             <img src={student} alt="" />
             <img src={school} alt="" />
