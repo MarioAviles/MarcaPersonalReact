@@ -6,12 +6,23 @@ import Empresa from './paginas/Empresa/Empresa'
 import CentroEducativo from './paginas/CentroEducativo/CentroEducativo'
 import Alumno from './paginas/Alumno/Alumno'
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react';
+import idioma from './mocks/mock-idiomas';
+import IdiomaContext from './contextos/IdiomaContext';
 
 function App() {
 
+  const [idiomaPagina, setIdiomaPagina] =useState(idioma.es);
+
+  function cambiarIdioma (idiomaElegido) {
+    setIdiomaPagina(idioma[idiomaElegido])
+  }
+
   return (
     <>
-    <Cabecera />
+    <Cabecera cambiarIdioma={cambiarIdioma}/>
+
+    <IdiomaContext.Provider value={idiomaPagina}>
     <Routes>
       <Route path="/" element={
         <div>
@@ -21,23 +32,21 @@ function App() {
       }/>
       <Route path="/empresa" element={
         <div>
-          <Cabecera />
           <Empresa />
         </div>
       }/>
       <Route path="/centroeducativo" element={
         <div>
-          <Cabecera />
           <CentroEducativo />
         </div>
       }/>
       <Route path="/alumno" element={
         <div>
-          <Cabecera />
           <Alumno />
         </div>
       }/>
     </Routes>
+    </IdiomaContext.Provider>
     </>
   )
 }

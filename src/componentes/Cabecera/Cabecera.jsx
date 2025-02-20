@@ -1,9 +1,16 @@
+import React from 'react';
 import './Cabecera.css'; // Importar CSS personalizado
 import logo from '../../assets/logo.png';
 import banderaEspaña from '../../assets/banderaEspaña.svg';
 import banderaInglaterra from '../../assets/banderaInglaterra.svg';
+import { Link } from 'react-router-dom';
 
-const Cabecera = () => {
+const Cabecera = (props) => {
+
+    const seleccionarIdioma = (idiomaSeleccionado) => {
+        props.cambiarIdioma(idiomaSeleccionado)
+    }
+
     return (
         <header className="cabecera container-fluid">
             <div className="row align-items-center">
@@ -25,31 +32,20 @@ const Cabecera = () => {
 
                         {/* Menú de navegación */}
                         <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
+                            <ul className="navbar-nav d-flex flex-row ms-auto">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item" href="#">
-                                        <img src={banderaEspaña} alt="Español" className="bandera" /> Español
+                                    <a className="nav-link" href="#">
+                                        <img onClick={() => seleccionarIdioma("es")} src={banderaEspaña} alt="Español" className="bandera" />
                                     </a>
                                 </li>
-                                <li>
-                                    <a className="dropdown-item" href="#">
-                                        <img src={banderaInglaterra} alt="Inglés" className="bandera" /> Inglés
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        <img onClick={() => seleccionarIdioma("en")} src={banderaInglaterra} alt="Inglés" className="bandera" />
                                     </a>
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </nav>
 

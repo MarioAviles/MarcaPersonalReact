@@ -24,12 +24,7 @@ html, body {
     font-weight: bold;
 }
 
-.idiomas {
-    display: flex;
-    gap: 10px; /* Espaciado entre banderas */
-}
-
 .bandera {
-    max-height: 25px;
+    max-width: 25px;
     cursor: pointer;
 }
