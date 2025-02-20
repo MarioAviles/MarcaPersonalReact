@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cabecera.css'; // Importar CSS personalizado
+import './Cabecera.css';
 import logo from '../../assets/logo.png';
 import banderaEspaña from '../../assets/banderaEspaña.svg';
 import banderaInglaterra from '../../assets/banderaInglaterra.svg';
@@ -16,12 +16,10 @@ const Cabecera = (props) => {
             <div className="row align-items-center">
                 <nav className="navbar navbar-expand-lg bg-body-light">
                     <div className="container-fluid">
-                        {/* Logo a la izquierda en pantallas grandes, centrado en móviles */}
                         <div className="col-12 col-md-4 col-lg-3 d-flex mb-2 mb-md-0 justify-content-center justify-content-md-start">
                             <img src={logo} alt="Logo" className="logo" />
                         </div>
 
-                        {/* Título centrado siempre */}
                         <div className="col-12 col-md-4 col-lg-6 text-center d-none d-md-block">
                             <h1 className="titulo">Marca Personal FP</h1>
                         </div>
@@ -30,7 +28,6 @@ const Cabecera = (props) => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
 
-                        {/* Menú de navegación */}
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav d-flex flex-row ms-auto">
                                 <li className="nav-item">
