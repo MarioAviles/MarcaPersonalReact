@@ -5,27 +5,31 @@ import tiktok from '../../assets/tiktok.svg';
 import twitter from '../../assets/twitter.svg';
 import youtube from '../../assets/youtube.svg';
 import logo from '../../assets/logoFondoAzul.png';
+import useCount from '../../hooks/useCount';
+import IdiomaContext from '../../contextos/IdiomaContext';
+import { useContext } from 'react';
 
 
-
-const Pie = () => { 
+const Pie = () => {
+    const counts = useCount();
+    const idioma = useContext(IdiomaContext);
 
     return (
         <footer>
             <div className="contadores">
                 <div className="contador">
-                    <h2>Empresas</h2>
-                    <h2>5</h2>
+                    <h2>{idioma.empresas}</h2>
+                    <h2>{counts.empresas}</h2>
                 </div>
 
                 <div className="contador">
-                    <h2>Proyectos</h2>
-                    <h2>5</h2>
+                    <h2>{idioma.proyectos}</h2>
+                    <h2>{counts.proyectos}</h2>
                 </div>
 
                 <div className="contador">
-                    <h2>Alumnos</h2>
-                    <h2>5</h2>
+                    <h2>{idioma.alumnos}</h2>
+                    <h2>{counts.alumnos}</h2>
                 </div>
             </div>
             <div className="informacion">
@@ -43,7 +47,7 @@ const Pie = () => {
             <div className="copyright">
                 <img src={logo} alt="" />
                 <h6>Marca Personal FP </h6>
-                <p>| Diseño Web CFGS Desarrollo de Aplicaciones Web &copy; 2023</p>
+                <p>| {idioma.grado} CFGS Desarrollo de Aplicaciones Web &copy; 2023</p>
             </div>
         </footer>
     )

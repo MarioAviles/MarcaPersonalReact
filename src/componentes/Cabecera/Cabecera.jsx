@@ -38,24 +38,15 @@ const Cabecera = () => {
                                 <li className="nav-item">
                                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                                 </li>
-
-                                {/* Dropdown para seleccionar idioma */}
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Idioma
+                                <li>
+                                    <a className="dropdown-item" href="#">
+                                        <img src={banderaEspaña} alt="Español" className="bandera" /> Español
                                     </a>
-                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li>
-                                            <a className="dropdown-item" href="#">
-                                                <img src={banderaEspaña} alt="Español" className="bandera" /> Español
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">
-                                                <img src={banderaInglaterra} alt="Inglés" className="bandera" /> Inglés
-                                            </a>
-                                        </li>
-                                    </ul>
+                                </li>
+                                <li>
+                                    <a className="dropdown-item" href="#">
+                                        <img src={banderaInglaterra} alt="Inglés" className="bandera" /> Inglés
+                                    </a>
                                 </li>
                             </ul>
                         </div>
