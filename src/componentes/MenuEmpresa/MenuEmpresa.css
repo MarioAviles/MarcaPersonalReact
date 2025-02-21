@@ -1,0 +1,21 @@
+.titulos {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    color: #364F59;
+}
+
+.MenuEmpresa {
+    background-color: white;
+    padding: 10px;
+}
+
+.naranja {
+    color: #f59432;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: #364F59;   
+}

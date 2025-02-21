@@ -1,8 +1,10 @@
+import MenuEmpresa from '../../componentes/MenuEmpresa/MenuEmpresa'
+
 const Empresa = () => {
 
     return (
         <div>
-            <h1>Empresa</h1>
+            <MenuEmpresa></MenuEmpresa>
         </div>
     )
 
