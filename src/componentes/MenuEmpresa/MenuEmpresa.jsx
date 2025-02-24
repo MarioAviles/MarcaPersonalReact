@@ -10,10 +10,10 @@ const MenuEmpresa = () => {
         <nav className="MenuEmpresa">
             <div className="titulos">
                 <p className="naranja">[ {idioma.empresas} ]</p>
-                <a href="/empresas/proyectos">
+                <a href="/empresa/proyectos">
                     <p>{idioma.proyectos}</p>
                 </a>
-                <a href="/empresas/alumnos">
+                <a href="/empresa/alumnos">
                     <p>{idioma.alumnos}</p>
                 </a>
             </div>

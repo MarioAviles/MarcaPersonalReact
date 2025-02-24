@@ -45,7 +45,7 @@ const Pie = () => {
                 </div>
             </div>
             <div className="copyright">
-                <img src={logo} alt="" />
+                <img src={logo} alt="" /> //mirar por qué no aparece
                 <h6>Marca Personal FP </h6>
                 <p>| {idioma.grado} CFGS Desarrollo de Aplicaciones Web &copy; 2023</p>
             </div>
