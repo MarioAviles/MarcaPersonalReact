@@ -5,17 +5,12 @@ const useFamiliaProfesional = () => {
 
     const [fp, setFP] = useState( [] );
     // Almaceno las familias profesionales en un array
-    const [buscando, setBuscando] = useState(true);
 
     function obtenerFP () {
-        setBuscando(true)
-
         getFamiliaProfesional().then(datos => {
             
             setFP( datos )
             console.log("Datos de FP: ",datos)
-
-            setBuscando(false)
         })
     }
 

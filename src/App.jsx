@@ -5,7 +5,8 @@ import Home from './paginas/Home/Home'
 import Empresa from './paginas/Empresa/Empresa'
 import CentroEducativo from './paginas/CentroEducativo/CentroEducativo'
 import Alumno from './paginas/Alumno/Alumno'
-import ListaFamiliaProfesionales from './componentes/ListaFamiliaProfesionales/ListaFamiliaProfesionales'
+import ListaFamiliasProfesionales from './componentes/ListaFamiliasProfesionales/ListaFamiliasProfesionales'
+import ResultadosBusquedaProyectos from './componentes/ResultadosBusquedaProyectos/ResultadosBusquedaProyectos'
 import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react';
 import idioma from './mocks/mock-idiomas';
@@ -48,7 +49,8 @@ function App() {
       }/>
       <Route path="/empresa/proyectos" element={
         <div>
-          <ListaFamiliaProfesionales /> //cambiar cuando haga pagina de empresa más extensa
+          <ListaFamiliasProfesionales />
+          <ResultadosBusquedaProyectos />
         </div>
       }/>
     </Routes>
