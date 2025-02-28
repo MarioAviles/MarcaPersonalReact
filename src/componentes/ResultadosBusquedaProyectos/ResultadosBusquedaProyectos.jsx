@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
-import useProyectos from '../../hooks/useProyectos';
-import './ResultadosBusquedaProyectos.css';
+import ProyectoMinCard from "../ProyectoMinCard/ProyectoMinCard";
 
-const ResultadosBusquedaProyectos = () => { 
-    
-    const [buscando, setBuscando] = useState(false);
-    const proyectos = useProyectos();
+const ResultadosBusquedaProyectos = ({listaProyectosFiltrados}) => { 
+    const [mostrar, setMostrar] = useState(false);
+
+    function mostrandoProyectos() {
+        setMostrar(!mostrar);
+    }
+
 
     return (
-        <div>
-        <button onClick={() => setBuscando(!buscando)}>
-            {buscando ? "Ocultar Proyectos" : "Mostrar Proyectos"}
-        </button>
-        {buscando && (
-            <div className="contenedor">
-                {proyectos.map((proyecto) => (
-                    <div key={proyecto.id} className="tarjeta">
-                        <p>{proyecto.nombre}</p>
-                    </div>
-                ))}
+        <div className="container mt-3 busqueda-proyectos">
+            <div className="border p-3">
+                <h5 className="fw-bold">Resultados</h5>
+                <button className="boton-filtrar" onClick={mostrandoProyectos}>
+                    Proyectos {mostrar ? '▲' : '▼'}
+                </button>
+                {mostrar && listaProyectosFiltrados.length > 0 && (
+                    <ProyectoMinCard proyectos={listaProyectosFiltrados} />
+                )}
+                {mostrar && listaProyectosFiltrados.length == 0 && (
+                   <ProyectoMinCard proyectos={listaProyectosFiltrados} /> 
+                )}
             </div>
-        )}
-    </div>
-    )
-}
+        </div>
+    );
+};
+
 
 export default ResultadosBusquedaProyectos;

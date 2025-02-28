@@ -1,37 +1,39 @@
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
+
+.busqueda-proyectos {
+    max-width: 800px;
+    margin: auto;
 }
 
-.tarjeta {
-    background-color: #ddd;
-    color: #888;
-    padding: 5px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.tarjeta:hover {
-    background-color: #bbb;
-    color: #555;
-}
-
-button {
-    margin: 20px;
-    padding: 10px 20px;
-    background-color: #3b3b3b;
-    color: white;
+.boton-filtrar {
+    background: none;
     border: none;
-    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s, color 0.3s;
 }
 
-button:hover {
-    background-color: #505050;
+.botonFamilias{
+    color: black;
+    border-radius: 5px;
+    &:hover{
+        background-color: #f59505;
+        border-color: #b87107;
+    }
+}
+
+.botonFamilias.seleccionado {
+    /* Estilos para los botones seleccionados */
+    background-color: #b87107;
+    color: black;
+    border: 2px solid #000000;
+}
+
+.resultados {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ccc;
 }

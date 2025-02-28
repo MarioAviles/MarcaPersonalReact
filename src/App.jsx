@@ -11,6 +11,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react';
 import idioma from './mocks/mock-idiomas';
 import IdiomaContext from './contextos/IdiomaContext';
+import EmpresaProyectos from './paginas/Empresa/EmpresaProyectos/EmpresaProyectos'
 
 function App() {
 
@@ -49,8 +50,7 @@ function App() {
       }/>
       <Route path="/empresa/proyectos" element={
         <div>
-          <ListaFamiliasProfesionales />
-          <ResultadosBusquedaProyectos />
+          <EmpresaProyectos />
         </div>
       }/>
     </Routes>
