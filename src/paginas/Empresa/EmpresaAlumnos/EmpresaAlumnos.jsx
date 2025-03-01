@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import ListaFamiliasProfesionales from "../../../componentes/ListaFamiliasProfesionales/ListaFamiliasProfesionales";
 import MenuEmpresa from "../../../componentes/MenuEmpresa/MenuEmpresa";
-import ResultadosBusquedaProyectos from "../../../componentes/ResultadosBusquedaProyectos/ResultadosBusquedaProyectos";
-import useProyectosFiltrados from "../../../hooks/useProyectosFiltrados";
-const EmpresaProyectos = () => {
+import ResultadosBusquedaAlumnos from "../../../componentes/ResultadosBusquedaAlumnos/ResultadosBusquedaAlumnos";
+import useAlumnosFiltrados from "../../../hooks/useAlumnosFiltrados";
+
+const EmpresaAlumnos = () => {
 
   // Constante que almacena todos los proyectos comos estado y que contiene
   // una funcion para filtrar, la cual recibirá los valores de las familias profesionales
   // en el componente ListaFamiliasProfesionales y alterará los proyectos listados
   
-  const { listaProyectosFiltrados, filtrarLista } = useProyectosFiltrados();
-  console.log("Lista de proyectos filtrados", listaProyectosFiltrados);
+  const { listaAlumnosFiltrados, filtrarLista } = useAlumnosFiltrados();
+  console.log("Lista de alumnos filtrados", listaAlumnosFiltrados);
 
   return (
     <div>
       <MenuEmpresa></MenuEmpresa>
       <details className="filter-section">
-        <summary className="filter-title">Búsqueda de proyectos</summary>
+        <summary className="filter-title">Búsqueda de alumnos</summary>
         <h5>Filtrar por familia profesional: </h5>
         <div>
           <ListaFamiliasProfesionales
@@ -25,12 +26,11 @@ const EmpresaProyectos = () => {
         </div>
       </details>
       <div>
-        <ResultadosBusquedaProyectos
-          listaProyectosFiltrados={listaProyectosFiltrados}
-        ></ResultadosBusquedaProyectos>
+        <ResultadosBusquedaAlumnos
+          listaAlumnosFiltrados={listaAlumnosFiltrados}
+        ></ResultadosBusquedaAlumnos>
       </div>
     </div>
   );
-};
-
-export default EmpresaProyectos;
+}
+export default EmpresaAlumnos;

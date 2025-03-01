@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import useFamiliaProfesional from '../../hooks/useFamiliaProfesional';
-import useProyectosFiltrados from '../../hooks/useProyectosFiltrados';
 import './ListaFamiliasProfesionales.css';
 
-const ListaFamiliaProfesionales = () => {
+const ListaFamiliaProfesionales = ({filtrarLista}) => {
 
     const [buscando, setBuscando] = useState(false);
     const [familiasSeleccionadas, setFamiliasSeleccionadas] = useState([]);
 
     const familiasProfesionales = useFamiliaProfesional();
-    const { filtrarLista } = useProyectosFiltrados();
 
     function mostrarFamilias() {
         setBuscando(!buscando);

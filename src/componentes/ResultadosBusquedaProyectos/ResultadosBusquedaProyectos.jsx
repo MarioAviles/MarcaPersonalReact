@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import ProyectoMinCard from "../ProyectoMinCard/ProyectoMinCard";
 
-const ResultadosBusquedaProyectos = ({listaProyectosFiltrados}) => { 
+const ResultadosBusquedaProyectos = (props) => {
+
     const [mostrar, setMostrar] = useState(false);
 
     function mostrandoProyectos() {
         setMostrar(!mostrar);
     }
-
 
     return (
         <div className="container mt-3 busqueda-proyectos">
@@ -16,16 +16,15 @@ const ResultadosBusquedaProyectos = ({listaProyectosFiltrados}) => {
                 <button className="boton-filtrar" onClick={mostrandoProyectos}>
                     Proyectos {mostrar ? '▲' : '▼'}
                 </button>
-                {mostrar && listaProyectosFiltrados.length > 0 && (
-                    <ProyectoMinCard proyectos={listaProyectosFiltrados} />
+                {mostrar && props.listaProyectosFiltrados.length > 0 && (
+                    props.listaProyectosFiltrados.map((proyecto) => (
+                        <ProyectoMinCard key={proyecto.id} proyecto={proyecto} />
+                    ))
                 )}
-                {mostrar && listaProyectosFiltrados.length == 0 && (
-                   <ProyectoMinCard proyectos={listaProyectosFiltrados} /> 
-                )}
+                
+
             </div>
         </div>
     );
 };
-
-
 export default ResultadosBusquedaProyectos;
