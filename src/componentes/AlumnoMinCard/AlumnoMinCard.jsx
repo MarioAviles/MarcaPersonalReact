@@ -1,16 +1,14 @@
 import "./AlumnoMinCard.css";
+import banderaEspaña from '../../assets/banderaEspaña.svg';
+import banderaInglaterra from '../../assets/banderaInglaterra.svg';
+import banderaFrancia from '../../assets/banderaFrancia.svg';
 
 const AlumnoMinCard = (props) => {
-  
+
   console.log("Mincard", props);
 
-  // Puesto que participantes y ciclos son arrays, los extraigo en dos constantes distintas
-  // que posteriormente usaré para mapear
   const ciclos = props.alumno.ciclos;
 
-  // Funcion para mapear los participantes del proyecto
-
-  // Funcion para mapear los ciclos a los que pertenece el proyecto
   function listarCiclos(ciclo) {
     return (
       <>
@@ -18,30 +16,49 @@ const AlumnoMinCard = (props) => {
       </>
     );
   }
+
+  function listarIdiomas(idiomas) {
+
+    const certificado = idiomas.certificado === 1 ? "C" : "SC";
+    const bandera = idiomas.native_name === "Español" ? banderaEspaña : idiomas.native_name === "English" ? banderaInglaterra : banderaFrancia;
+
+    return <>
+      <img className="bandera" src={bandera} alt="" /><br />
+      {idiomas.nivel}<br />
+      {certificado}<br />
+    </>;
+  }
+
   return (
-    <div className="col-3 ">
-    <section class="w-100 sectionMinCard">
-      <div class="row d-flex">
-       
-          <div class="card divCardMinCard">
-            <div class="d-flex">
-              <div class="flex-shrink-0">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                  alt="Generic placeholder image"
-                  class="img-fluid imgMinCard"
-                />
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h4 class="mb-1">{props.alumno.nombre} {props.alumno.apellidos}</h4>
-                <p class="mb-2 pb-1"><h5>Ciclos: </h5> {ciclos.map(listarCiclos)}</p>
+
+    <div class="col-12">
+      <div className="card" style={{ borderRadius: "15px" }}>
+        <div className="card-body">
+          <div className="d-flex">
+            <div className="flex-shrink-0">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                alt="Generic placeholder"
+                style={{ width: "160px", borderRadius: "10px" }}
+              />
+            </div>
+            <div className="flex-grow-1 ms-3">
+              <h5 className="mb-1">{props.alumno.nombre} {props.alumno.apellidos}</h5>
+              <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
+
+                <div className="px-3">
+                  <p className="textoPequeño mb-0 text-muted">{props.alumno.idiomas.map(listarIdiomas)}</p>
+                </div>
+                <div>
+                  <p className="textoPequeño mb-1">Ciclos</p>
+                  <p className="textoPequeño mb-0 text-muted">{ciclos.map(listarCiclos)}</p>
+                </div>
               </div>
             </div>
           </div>
-        
+        </div>
       </div>
-    </section>
-  </div>
-);
+    </div>
+  );
 };
 export default AlumnoMinCard;

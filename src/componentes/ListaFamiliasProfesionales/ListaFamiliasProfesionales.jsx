@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import useFamiliaProfesional from '../../hooks/useFamiliaProfesional';
 import './ListaFamiliasProfesionales.css';
 
-const ListaFamiliaProfesionales = ({filtrarLista}) => {
+const ListaFamiliaProfesionales = ({ filtrarLista }) => {
 
-    const [buscando, setBuscando] = useState(false);
     const [familiasSeleccionadas, setFamiliasSeleccionadas] = useState([]);
-
     const familiasProfesionales = useFamiliaProfesional();
 
-    function mostrarFamilias() {
-        setBuscando(!buscando);
-    }
 
     function cambiarFamiliaSeleccionada(familiaId) {
         const nuevasFamiliasSeleccionadas = familiasSeleccionadas.includes(familiaId)
@@ -23,27 +18,23 @@ const ListaFamiliaProfesionales = ({filtrarLista}) => {
     }
 
     return (
-        <div className="container mt-3 busqueda-proyectos">
-            <div className="border p-3">
-                <h5 className="fw-bold">Búsqueda de Proyectos</h5>
-                <button className="boton-filtrar" onClick={mostrarFamilias}>
-                    Filtrar por familia profesional {buscando ? '▲' : '▼'}
-                </button>
-                {buscando && (
-                    <div className="mt-2">
-                        {familiasProfesionales.map((familia) => (
-                            <button
-                                key={familia.id}
-                                className={`botonFamilias m-1 ${familiasSeleccionadas.includes(familia.id) ? 'seleccionado' : ''}`}
-                                onClick={() => cambiarFamiliaSeleccionada(familia.id)}
-                            >
-                                {familia.nombre}
-                            </button>
-                        ))}
-                    </div>
-                )}
+        <div className="container-fluid busqueda-proyectos">
+            <div className="col-12 p-3">
+                <h6 className="fw-bold">Filtra por familia profesional</h6>
+                <div className="mt-2">
+                    {familiasProfesionales.map((familia) => (
+                        <button
+                            key={familia.id}
+                            className={`botonFamilias m-1 ${familiasSeleccionadas.includes(familia.id) ? 'seleccionado' : ''}`}
+                            onClick={() => cambiarFamiliaSeleccionada(familia.id)}
+                        >
+                            {familia.nombre}
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
+
     )
 }
 export default ListaFamiliaProfesionales;

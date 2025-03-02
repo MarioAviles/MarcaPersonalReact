@@ -1,29 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AlumnoMinCard from "../AlumnoMinCard/AlumnoMinCard";
 
 const ResultadosBusquedaAlumnos = (props) => {
 
-    const [mostrar, setMostrar] = useState(false);
-
-    function mostrandoAlumnos() {
-        setMostrar(!mostrar);
-    }
-
     return (
-        <div className="container mt-3 busqueda-proyectos">
-            <div className="border p-3">
-                <h5 className="fw-bold">Resultados</h5>
-                <button className="boton-filtrar" onClick={mostrandoAlumnos}>
-                    Alumnos {mostrar ? '▲' : '▼'}
-                </button>
-                {mostrar && props.listaAlumnosFiltrados.length > 0 && (
-                    props.listaAlumnosFiltrados.map((alumno) => (
-                        console.log("Alumno en ResultadosBusquedaAlumnos:", alumno),
-                        <AlumnoMinCard key={alumno.id} alumno={alumno} />
-                    ))
-                )}
-                
 
+        <div className="container-fluid">
+            <div className="col-12 p-3">
+                <h5 className="fw-bold">Resultados</h5>
+                <div className="row d-flex g-3">
+                    {props.listaAlumnosFiltrados.map((alumno) => (
+                        <div key={alumno.id} className="col-12 col-sm-6 col-lg-3">
+                            <AlumnoMinCard alumno={alumno} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

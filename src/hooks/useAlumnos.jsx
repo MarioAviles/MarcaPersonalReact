@@ -17,9 +17,7 @@ const useAlumnos = () => {
         })
     }
 
-    //para que se ejecute una sola vez al cargar la página
     useEffect(obtenerAlumnos, []);
-    // console.log({proyectos})
     return {alumnos, buscando}
 }
 export default useAlumnos;

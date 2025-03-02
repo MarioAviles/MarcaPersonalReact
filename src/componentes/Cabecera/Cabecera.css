@@ -14,7 +14,7 @@ html, body {
 }
 
 .logo {
-    width: 70px; /* Ajustar el tamaño del logo */
+    width: 70px;
 }
 
 .titulo {
@@ -26,4 +26,32 @@ html, body {
 .bandera {
     max-width: 25px;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.bandera:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 991px) { 
+
+    .navbar-toggler {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-nav {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: right;
+    }
+
+    .navbar-nav.d-flex {
+        flex-direction: column;
+    }
 }

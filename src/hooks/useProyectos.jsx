@@ -17,9 +17,7 @@ const useProyectos = () => {
         })
     }
 
-    //para que se ejecute una sola vez al cargar la página
     useEffect(obtenerProyectos, []);
-    // console.log({proyectos})
     return {proyectos, buscando}
 }
 export default useProyectos;

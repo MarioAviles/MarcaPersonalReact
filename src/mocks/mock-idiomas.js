@@ -4,15 +4,19 @@ const idiomas = {
         empresas: "Empresas",
         proyectos: "Proyectos",
         alumnos: "Alumnos",
-        grado: "Diseño Web"
-
+        grado: "Diseño Web",
+        busquedaProyectos: "Búsqueda de Proyectos",
+        busquedaAlumnos: "Busca a tus Alumnos",
+        resultados: "Resultados",
     },
     "en": {
         empresas: "Companies",
         proyectos: "Projects",
         alumnos: "Students",
-        grado: "Web Design"
-
+        grado: "Web Design",
+        busquedaProyectos: "Project Search",
+        busquedaAlumnos: "Search for your Students",
+        resultados: "Results",
     }
 };
 export default idiomas;

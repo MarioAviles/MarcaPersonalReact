@@ -1,76 +1,84 @@
-footer {
-    background-color: #364F59; /* Color oscuro de fondo */
-    text-align: center;
-    color: white;
+.container{
+    padding: 0 !important;
+    margin: 0 auto !important;
 }
 
-/* Contenedor de los contadores */
-.contadores{
-    display: flex;
-    justify-content: center;
-    background-color: #f7931e; /* Naranja */
-    padding: 30px 0;
-    margin: 0 10%;
+.footer {
+    background-color: #364F59;
     text-align: center;
+    color: white;
+    padding: 0;
+    margin: 5% 0 0;
+}
+
+.contadores {
+    background-color: #f7931e;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; 
 }
 
 .contador {
     display: flex;
-    flex-direction: column; /* Apila el título y el número */
-    align-items: center; /* Centra horizontalmente */
-    margin: 0 30px; /* Más espacio entre columnas */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; 
 }
 
-/* Estilos para los textos */
+
 .contador h2 {
     margin: 5px 0;
     font-size: 24px;
     font-weight: bold;
 }
 
-/* Estilos para cada bloque */
-.contadores h2 {
-    margin: 0 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Ajuste para números */
-
-.informacion{
+/* Información */
+.informacion {
+    width: 100%;
     padding: 10px;
     border: 1px solid #284753;
 }
 
-.informacion a{
+.informacion a {
     text-decoration: none;
     color: white;
 }
 
-.imagenes{
+
+.imagenes {
     display: flex;
     justify-content: center;
     margin: 0 10% 15px;
 }
 
-.imagenes img{
+.imagenes img {
     width: 30px;
     height: 50px;
-    margin: 0 5px 0 0;
+    margin: 0 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
+.imagenes img:hover {
+    transform: scale(1.1);
+}
+
+/* Copyright */
 .copyright {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 10px; 
+    gap: 10px;
     padding: 20px;
 }
 
 .copyright img {
     width: 80px;
     height: auto;
-    vertical-align: bottom; /* para que la imagen se alinee con el texto */
 }
 
 .copyright h6 {
@@ -83,3 +91,4 @@ footer {
     font-size: 14px;
     margin: 0;
 }
+

@@ -1,20 +1,17 @@
+import React from "react";
 import "./ProyectoMinCard.css";
 
 const ProyectoMinCard = (props) => {
-  
+
   console.log("Mincard", props);
 
-  // Puesto que participantes y ciclos son arrays, los extraigo en dos constantes distintas
-  // que posteriormente usaré para mapear
   const participantes = props.proyecto.participantes;
   const ciclos = props.proyecto.ciclos;
 
-  // Funcion para mapear los participantes del proyecto
   function listarParticipantes(participante) {
-    return <>{participante.name}<br/> </>;
+    return <>{participante.name}<br /> </>;
   }
 
-  // Funcion para mapear los ciclos a los que pertenece el proyecto
   function listarCiclos(ciclo) {
     return (
       <>
@@ -23,34 +20,39 @@ const ProyectoMinCard = (props) => {
     );
   }
   return (
-    <div className="col-3 ">
-    <section class="w-100 sectionMinCard">
-      <div class="row d-flex">
-       
-          <div class="card divCardMinCard">
-            <div class="d-flex">
-              <div class="flex-shrink-0">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                  alt="Generic placeholder image"
-                  class="img-fluid imgMinCard"
-                />
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h4 class="mb-1">{props.proyecto.nombre}</h4>
-                <p class="mb-2 pb-1"><h5>ID:</h5>{props.proyecto.id}</p>
-                <p class="mb-2 pb-1">
-                  <h5>Alumnos:</h5> {participantes.map(listarParticipantes)}
-                </p>
-                <p class="mb-2 pb-1"><h5>Tutor: </h5> {props.proyecto.docente_id}</p>
-                <p class="mb-2 pb-1"><h5>Ciclos: </h5> {ciclos.map(listarCiclos)}</p>
+    <div class="col-12">
+      <div className="card" style={{borderRadius: "15px"}}>
+        <div className="card-body p-4">
+          <div className="d-flex">
+            <div className="flex-shrink-0">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                alt="Generic placeholder"
+                className="img-fluid"
+                style={{ width: "180px", borderRadius: "10px" }}
+              />
+            </div>
+            <div className="flex-grow-1 ms-3">
+              <h5 className="mb-1">{props.proyecto.nombre}</h5>
+              <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
+                <div>
+                  <p className="textoPequeño mb-1">ALUMNOS</p>
+                  <p className="textoPequeño mb-0 text-muted">{participantes.map(listarParticipantes)}</p>
+                </div>
+                <div className="px-3">
+                  <p className="textoPequeño mb-1">Tutor</p>
+                  <p className="textoPequeño mb-0 text-muted">{props.proyecto.docente_id}</p>
+                </div>
+                <div>
+                  <p className="textoPequeño mb-1">Ciclos</p>
+                  <p className="textoPequeño mb-0 text-muted">{ciclos.map(listarCiclos)}</p>
+                </div>
               </div>
             </div>
           </div>
-        
+        </div>
       </div>
-    </section>
-  </div>
-);
+    </div>
+  );
 };
 export default ProyectoMinCard;

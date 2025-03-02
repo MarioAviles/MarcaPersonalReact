@@ -14,51 +14,51 @@ import EmpresaAlumnos from './paginas/Empresa/EmpresaAlumnos/EmpresaAlumnos'
 
 function App() {
 
-  const [idiomaPagina, setIdiomaPagina] =useState(idioma.es);
+  const [idiomaPagina, setIdiomaPagina] = useState(idioma.es);
 
-  function cambiarIdioma (idiomaElegido) {
+  function cambiarIdioma(idiomaElegido) {
     setIdiomaPagina(idioma[idiomaElegido])
   }
 
   return (
     <>
-    <Cabecera cambiarIdioma={cambiarIdioma}/>
+      <Cabecera cambiarIdioma={cambiarIdioma} />
 
-    <IdiomaContext.Provider value={idiomaPagina}>
-    <Routes>
-      <Route path="/" element={
-        <div>
-          <Home />
-          <Pie />
-        </div>
-      }/>
-      <Route path="/empresa" element={
-        <div>
-          <Empresa />
-        </div>
-      }/>
-      <Route path="/centroeducativo" element={
-        <div>
-          <CentroEducativo />
-        </div>
-      }/>
-      <Route path="/alumno" element={
-        <div>
-          <Alumno />
-        </div>
-      }/>
-      <Route path="/empresa/proyectos" element={
-        <div>
-          <EmpresaProyectos />
-        </div>
-      }/>
-      <Route path="/empresa/alumnos" element={
-        <div>
-          <EmpresaAlumnos />
-        </div>
-      }/>
-    </Routes>
-    </IdiomaContext.Provider>
+      <IdiomaContext.Provider value={idiomaPagina}>
+        <Routes>
+          <Route path="/" element={
+            <div>
+              <Home />
+              <Pie />
+            </div>
+          } />
+          <Route path="/empresa" element={
+            <div>
+              <Empresa />
+            </div>
+          } />
+          <Route path="/centroeducativo" element={
+            <div>
+              <CentroEducativo />
+            </div>
+          } />
+          <Route path="/alumno" element={
+            <div>
+              <Alumno />
+            </div>
+          } />
+          <Route path="/empresa/proyectos" element={
+            <div>
+              <EmpresaProyectos />
+            </div>
+          } />
+          <Route path="/empresa/alumnos" element={
+            <div>
+              <EmpresaAlumnos />
+            </div>
+          } />
+        </Routes>
+      </IdiomaContext.Provider>
     </>
   )
 }

@@ -36,7 +36,6 @@ const useProyectosFiltrados = () => {
           }
         }
       });
-      // Finalmente hace el set al estado de proyectos filtrados
       setListaProyectosFiltrados([...proyectosFiltradosArray]);
     }
   }
