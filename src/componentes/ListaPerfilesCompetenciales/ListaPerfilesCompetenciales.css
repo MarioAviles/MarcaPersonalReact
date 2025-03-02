@@ -1,0 +1,31 @@
+.busqueda-competencias {
+    width: 100%;
+    margin: auto;
+}
+
+.botonCompetencias {
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    border: 1px transparent;
+    background-color: rgba(133, 133, 133, 0.651);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.botonCompetencias:hover {
+    background-color: #ca7900b2;
+}
+
+.botonCompetencias.seleccionado {
+    background-color: #ca7900b2;
+    color: black;
+    border: 2px solid #000000;
+}
+
+.resultados {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}

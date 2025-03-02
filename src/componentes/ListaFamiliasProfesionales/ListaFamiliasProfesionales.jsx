@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import useFamiliaProfesional from '../../hooks/useFamiliaProfesional';
+import { useContext } from "react"
+import IdiomaContext from "../../contextos/IdiomaContext"
 import './ListaFamiliasProfesionales.css';
 
 const ListaFamiliaProfesionales = ({ filtrarLista }) => {
 
     const [familiasSeleccionadas, setFamiliasSeleccionadas] = useState([]);
     const familiasProfesionales = useFamiliaProfesional();
+    const idioma = useContext(IdiomaContext);
 
 
     function cambiarFamiliaSeleccionada(familiaId) {
@@ -20,7 +23,7 @@ const ListaFamiliaProfesionales = ({ filtrarLista }) => {
     return (
         <div className="container-fluid busqueda-proyectos">
             <div className="col-12 p-3">
-                <h6 className="fw-bold">Filtra por familia profesional</h6>
+                <h6 className="fw-bold">{idioma.familiaProfesional}</h6>
                 <div className="mt-2">
                     {familiasProfesionales.map((familia) => (
                         <button

@@ -8,6 +8,7 @@ const AlumnoMinCard = (props) => {
   console.log("Mincard", props);
 
   const ciclos = props.alumno.ciclos;
+  const competencias = props.alumno.competencias;
 
   function listarCiclos(ciclo) {
     return (
@@ -23,10 +24,18 @@ const AlumnoMinCard = (props) => {
     const bandera = idiomas.native_name === "Español" ? banderaEspaña : idiomas.native_name === "English" ? banderaInglaterra : banderaFrancia;
 
     return <>
-      <img className="bandera" src={bandera} alt="" /><br />
+      <img className="bandera" src={bandera} alt="" /> <br />
       {idiomas.nivel}<br />
       {certificado}<br />
     </>;
+  }
+
+  function listarCompetencias(competencias) {
+    return (
+      <>
+        {competencias.nombre} <br />
+      </>
+    );
   }
 
   return (
@@ -42,14 +51,18 @@ const AlumnoMinCard = (props) => {
                 style={{ width: "160px", borderRadius: "10px" }}
               />
             </div>
-            <div className="flex-grow-1 ms-3">
+            <div className="flex-grow-1 ms-1">
               <h5 className="mb-1">{props.alumno.nombre} {props.alumno.apellidos}</h5>
               <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
 
-                <div className="px-3">
+                <div className="px-2">
                   <p className="textoPequeño mb-0 text-muted">{props.alumno.idiomas.map(listarIdiomas)}</p>
                 </div>
-                <div>
+                <div className="px-2">
+                  <p className="textoPequeño mb-1">Perfiles</p>
+                  <p className="textoPequeño mb-0 text-muted">{competencias.map(listarCompetencias)}</p>
+                </div>
+                <div className="px-2">
                   <p className="textoPequeño mb-1">Ciclos</p>
                   <p className="textoPequeño mb-0 text-muted">{ciclos.map(listarCiclos)}</p>
                 </div>

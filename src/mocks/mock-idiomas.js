@@ -7,6 +7,8 @@ const idiomas = {
         grado: "Diseño Web",
         busquedaProyectos: "Búsqueda de Proyectos",
         busquedaAlumnos: "Busca a tus Alumnos",
+        perfilCompetencial: "Filtra por perfil competencial",
+        familiaProfesional: "Filtra por familia profesional",
         resultados: "Resultados",
     },
     "en": {
@@ -16,6 +18,8 @@ const idiomas = {
         grado: "Web Design",
         busquedaProyectos: "Project Search",
         busquedaAlumnos: "Search for your Students",
+        perfilCompetencial: "Filter by competency profile",
+        familiaProfesional: "Filter by professional family",
         resultados: "Results",
     }
 };
